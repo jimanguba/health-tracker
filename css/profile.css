@@ -1,0 +1,33 @@
+#content {
+    border: solid rgb(0, 0, 0);  
+    margin: 100 400 ;   
+    width: 200px;  
+    height: 100px; 
+    border-width: 2px; 
+    background: rgb(224, 224, 224);  
+}
+
+#topSection1{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}
+
+
+.previous-page {
+    font-size: xxx-large;
+    border-radius: 50%;
+    margin-left: 90px;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 8px;
+    color: black;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
