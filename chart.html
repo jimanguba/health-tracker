@@ -1,68 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/nutri.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <title>Nutrition</title>
+
+</head>
+
 <body>
+  
+  <div class="container">
+    <nav id = "navid">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chart.html">Nutrition</a></li>
+        <li><a href="mental-health.html">Mental Health</a></li>
+        <li><a href="exercise-options.html">Exercise Options</a>
+          <ul>
+            <li><a href="exercises.html">Exercises</a></li>
+            <li><a href="exercises-goal-game.html">Goal & Game</a></li>
+            <li><a href="exercise-challenge.html">Current Battles</a></li>
+          </ul>
+        </li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav> 
+  </div>
+
+    <div class=container id="main">
+        <div class="inner-container">
+            <h2>Add food</h2>
+            <form id="create-form">
+                <label for="create-name">Food name:</label>
+                <input autocomplete="off" list="foodlist" type="text" id="create-name" style="text-align: left;"
+                    required />
+                <datalist id="foodlist">
+                    <option value="Hamburger">
+                    <option value="Salad">
+                    <option value="Sandwich">
+                    <option value="Sushi">
+                    <option value="Lasagne">
+                    <option value="Pizza">
+                    <option value="Cake"></option>
+                </datalist>
+                <div class="nutrition-values">
+                    <label for="create-carbs">Carbs:</label>
+                    <input class="nutrition-input" type="number" id="create-carbs" min="0" max="200" placeholder="0 gram"
+                        step="0.01" required>
+
+                    <label for="create-protein">Protein:</label>
+                    <input class="nutrition-input" type="number" id="create-protein" min="0" max="200" placeholder="0 gram"
+                        step="0.01" required>
+
+                    <label for="create-fat">Fat:</label>
+                    <input class="nutrition-input" type="number" id="create-fat" min="0" max="200" placeholder="0 gram"
+                        step="0.01" required>
+                    <div></div>
+                    <input type="submit" class="create-submit" value="Add">
+                </div>
+            </form>
+        </div>
+        
+        
+        <div class = "container">
+            <canvas id = "myChart"></canvas>
+            <script src="donught.js"></script>
+        </div>
+        <h2 class="log">Summary</h2>
+        <div id="total-calories-container">
+            <h3>Total calories logged : <span id="total-calories">1200</span></h3>
+        </div>
+        <ul id="food-list"></ul>
+    </div>
+
+
+    
+
+    <!--<div class="container">
+      <div class="card" style="width: 18rem; height:max-content;">
+        <div class="card-body">
+          <h3 class="card-title">🍣</h3>
+          <p class="card-text">Sushi</p>
+          <ul>
+            <li class="carbs">Carbs 120</li>
+            <li class="protein">Protein 140</li>
+            <li class="fat">Fat 80</li>
+          </ul>
+          
+          <a href="#" class="btn btn-primary">Delete</a>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
-        <div class="row">
-            <div class = "row wf">
-                <h3>Breakfast</h3>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Food List
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Milk</a>
-                      <a class="dropdown-item" href="#">Cookies</a>
-                      <a class="dropdown-item" href="#">Coffee</a>
-                    </div>
-                  </div>
-
-            </div>
-
-            <div class = "row wf">
-                <h2>Lunch</h2>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Food List
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Milk</a>
-                      <a class="dropdown-item" href="#">Cookies</a>
-                      <a class="dropdown-item" href="#">Coffee</a>
-                    </div>
-            </div>
-
-            <div class = "row wf">
-                <h2>Dinner</h2>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Food List
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Milk</a>
-                      <a class="dropdown-item" href="#">Cookies</a>
-                      <a class="dropdown-item" href="#">Coffee</a>
-                    </div>
-            </div>
-
+      <div class="card" style="width: 18rem; height:max-content;">
+        <div class="card-body">
+          <h3 class="card-title">🍕</h3>
+          <p class="card-text">Pizza</p>
+          <ul>
+            <li class="carbs">Carbs 90</li>
+            <li class="protein">Protein 100</li>
+            <li class="fat">Fat 110</li>
+          </ul>
+          
+          <a href="#" class="btn btn-primary">Delete</a>
         </div>
-    </div>
-    <div class = "container-sm">
-        <div class = "chart-container">
-            <canvas id = "myChart"></canvas>
-        </div>
-    
-    
-        <script src="donught.js"></script>
-    </div>
-    
+      </div>
+    </div> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class = "col">
+          <div class="card" style="width: 18rem; height:max-content;">
+            <div class="card-body">
+              <h3 class="card-title">🍣</h3>
+              <p class="card-text">Sushi</p>
+              <ul>
+                <li class="carbs">Carbs 120</li>
+                <li class="protein">Protein 140</li>
+                <li class="fat">Fat 80</li>
+              </ul>
+              
+              <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class = "col">
+          <div class="card" style="width: 18rem; height:max-content;">
+            <div class="card-body">
+              <h3 class="card-title">🥪</h3>
+              <p class="card-text">Sandwich</p>
+              <ul>
+                <li class="carbs">Carbs 130</li>
+                <li class="protein">Protein 140</li>
+                <li class="fat">Fat 50</li>
+              </ul>
+              
+              <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class = "col">
+          <div class="card" style="width: 18rem; height:max-content;">
+            <div class="card-body">
+              <h3 class="card-title">🥩</h3>
+              <p class="card-text">Steak</p>
+              <ul>
+                <li class="carbs">Carbs 15</li>
+                <li class="protein">Protein 180</li>
+                <li class="fat">Fat 120</li>
+              </ul>
+              
+              <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+  
+        <div class = "col">
+          <div class="card" style="width: 18rem; height:max-content;">
+            <div class="card-body">
+              <h3 class="card-title">🍕</h3>
+              <p class="card-text">Pizza</p>
+              <ul>
+                <li class="carbs">Carbs 110</li>
+                <li class="protein">Protein 120</li>
+                <li class="fat">Fat 80</li>
+              </ul>
+              
+              <a href="#" class="btn btn-primary">Delete</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com /ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
+
 </html>
