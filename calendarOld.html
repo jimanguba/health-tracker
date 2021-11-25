@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar</title>
+</head>
+<body>
+<p style="text-align: center;">Calendar. Yup. That's what we got.</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-glass.css" />
+<script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.min.js"></script>
+
+<div id="color-calendar"></div>
+
+<script>
+
+    const myEvents = [
+        {
+            start: '2021-04-15T06:00:00',
+            end: '2021-04-15T20:30:00',
+            name: 'Event 1',
+            url: 'https://www.cssscript.com',
+            desc: 'Description 1',
+            // more key value pairs here
+        },{
+            start: '2021-04-16T06:00:00',
+            end: '2021-04-16T20:30:00',
+            name: 'Event 2',
+            url: 'https://www.cssscript.com',
+        },{
+            start: '2021-04-16T06:00:00',
+            end: '2021-04-17T20:30:00',
+            name: 'Event 3',
+            url: 'https://www.cssscript.com',
+        },
+    ]
+
+    new Calendar({
+        id: '#color-calendar',
+        eventsData: myEvents,
+    })
+
+
+</script>
+
+</body>
+</html>
