@@ -258,20 +258,32 @@
                 var square = createElement('div', 'event-category ' + ev.color);
                 if(ev.color === 'orange') { // happy
                     square.style.backgroundImage = "url('./happy-icon.png')";
+                    square.addEventListener('click', function() {
+                        window.location = "mental-health.html";
+                    })
                 } else if(ev.color === 'red') { //sad
                     square.style.backgroundImage = "url('./crying-icon.png')";
+                    square.addEventListener('click', function() {
+                        window.location = "mental-health.html";
+                    })
                 } else if(ev.color === 'green') { // medium happy?
                     square.style.backgroundImage = "url('./medium-sad-icon.png')";
+                    square.addEventListener('click', function() {
+                        window.location = "mental-health.html";
+                    })
                 } else if(ev.color === 'blue') { //workout
                     square.style.backgroundImage = "url('./workout-icon.png')";
+                    square.addEventListener('click', function() {
+                        window.location = "exercises.html";
+                    })
                 } else { // nutrition
                     square.style.backgroundImage = "url('./nutrition-icon.png')";
+                    square.addEventListener('click', function() {
+                        window.location = "chart.html";
+                    })
                 }
                 square.style.backgroundSize = "30px 30px"
 
-                square.addEventListener('click', function() {
-                    window.location = "mental-health.html";
-                })
                 var span = createElement('span', '', ev.eventName);
 
                 div.appendChild(square);
@@ -368,22 +380,22 @@
             // WORKOUT
             { eventName: '15 Push-ups', calendar: 'Workout', color: 'blue' },
             { eventName: 'Ran 1KM', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
-            { eventName: '', calendar: 'Workout', color: 'blue' },
+            { eventName: '10 Sit-Ups', calendar: 'Workout', color: 'blue' },
+            { eventName: '50 Squats', calendar: 'Workout', color: 'blue' },
+            { eventName: '100 Push-Ups', calendar: 'Workout', color: 'blue' },
+            { eventName: '5 Pull-Ups', calendar: 'Workout', color: 'blue' },
+            { eventName: '20 Hip-Thrusts', calendar: 'Workout', color: 'blue' },
+            { eventName: '1 Squat', calendar: 'Workout', color: 'blue' },
 
             // NUTRITION
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
-            { eventName: '', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 100 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 50 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 250 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 1000 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 150 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 55 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 375 Calories', calendar: 'Nutrition', color: 'yellow' },
+            { eventName: 'Consumed 425 Calories', calendar: 'Nutrition', color: 'yellow' },
         ];
 
 
