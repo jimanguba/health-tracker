@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  background: #131313;
+  background: white;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -192,8 +192,8 @@
 
 /* Hero Section */
 .hero {
-  background: #000000;
-  background: linear-gradient(to right, #161616, #000000);
+  background: white;
+  background: linear-gradient(to right, white, white);
   padding: 200px 0;
 }
 
@@ -473,13 +473,13 @@
 
 /* Front Section */
 .front {
-  background: #131313;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 10rem 0;
+  padding: 5rem 0;
 }
 
 .front h1 {
