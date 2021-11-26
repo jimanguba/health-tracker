@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help Page</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	
+	<style type="text/css">
+
+		.faq {
+			width: 50%;
+			margin: 0 auto;
+			display: grid;
+			align-items: center;
+		}
+
+		.answer {
+			display: none;
+			font-size: 20px;
+		}
+
+		.question {
+			cursor: pointer;
+			color: blue;
+			font-size: 30px;
+		}
+		
+		.ct{
+			display: grid;
+			grid-template-columns: 3fr 20fr 1fr;
+			grid-gap: 1em; 
+		}
+
+		.button{
+			background-color: white;
+			border: none;
+			color: red;
+			padding: 8px 10px;
+			text-align: center;
+			display: inline-block;
+			font-size: 16px;
+		}
+
+		select{
+			height:40px;
+			background-color: transparent;
+		}
+		
+		.centered{
+			position: absolute;
+			top: 38%;
+			left: 50%;
+			width: 100%;
+			transform: translate(-50%, -50%)
+		}
+		.ca{
+			margin-top: 300;
+		}
+
+
+
+
+	</style>
+
+	<style type="text/css">
+		*{
+    margin: 0;
+    padding: 0;
+    /* font-family: Verdana; */
+    list-style:none;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    background-color: #222222;
+    top: 0;
+    left: 0;
+  }
+  nav>ul{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  nav>ul>li{
+    display: block;
+    float: left;
+    width: 20%;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+  }
+  nav>ul>li>a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size :.9em;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  nav>ul>li>a::after{
+    content:'';
+    height:0px;
+    width: 100%;
+    position: absolute;
+    background-color: #FFFFFF;
+    bottom: 0;
+    left: 0;
+    transition: all ease-in-out .2s;
+  }
+  nav>ul>li>a:hover{
+    background-color: #333333;
+  }
+  nav>ul>li>a:hover::after{
+    height: 3px;
+  }
+  
+  nav>ul>li:hover>ul{
+    display: block;
+  }
+  nav>ul>li>ul{
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    height: auto;
+    background-color: #222222;
+    display: none;
+  }
+  
+  nav>ul>li>ul>li>a{
+    text-decoration: none;
+    color: #f7f7f7;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  nav>ul>li>ul>li>a:hover{
+    background-color: #333333;
+  }
+	</style>
+</head>
+<body>
+
+	<nav>
+		<ul>
+		  <li><a href="index.html">Home</a></li>
+		  <li><a href="chart.html">Nutrition</a></li>
+		  <li><a href="mental-health.html">Mental Health</a></li>
+		  <li><a href="exercise-options.html">Exercise Options</a>
+			<ul>
+			  <li><a href="exercises.html">Exercises</a></li>
+			  <li><a href="exercises-goal-game.html">Goal & Game</a></li>
+			  <li><a href="exercise-challenge.html">Challenge</a></li>
+			</ul>
+		  </li>
+		  <li><a href="profile.html">Profile</a></li>
+		</ul>
+	  </nav>
+
+	<div class="faq">
+		<p style="text-align: center;">&nbsp;</p>
+        <p style="text-align: center;">&nbsp;</p>
+
+        <p style="text-align: center;">&nbsp;</p>
+        <p style="text-align: center;">&nbsp;</p>
+
+		<h2 class="question">How can I add my food history?</h2>
+			
+		<div class="answer">
+			You can go to nutrition page to add your food history. 
+		</div>
+			
+		<h2 class="question">How many exercise do you have?</h2>
+			
+		<div class="answer">
+			You have few built in exercise for now. We will more exercise near future.
+		</div>
+
+		<h2 class="question">What is the exercise goal page?</h3>
+			
+		<div class="answer">
+			You can add goal and track your progress like a game.
+		</div>
+
+		<h2 class="question">Didn't find what you are looking for?</h3>
+			
+		<div class="answer">
+			Give us an Email.
+		</div>
+
+	</div>
+	<script>
+			$(document).ready(function() {
+			$(".faq h2").on("click", function() {
+					$(this).next().slideToggle();
+				});
+			});
+	</script>
+
+</body>
+</html>
