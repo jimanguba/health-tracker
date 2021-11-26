@@ -11,6 +11,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <title>Current Battles</title>
     </head>
+
+    <script>
+        function addBattle(id) {
+            var toAddPage = document.getElementById("skill");
+            toAddPage.insertAdjacentHTML('afterbegin', '            <div class="container">\n' +
+                '                <div class="row">\n' +
+                '                    <dl class="row">\n' +
+                '                        <dt class="col-sm-2 mt-2">You</dt>\n' +
+                '                        <dd class="col-sm-9 mt-2"><span class="you-bar bar" style="width: 0%;"><span class="text-right d-block mr-2 animation-blink">0%</span></span></dd>\n' +
+                '                    </dl>\n' +
+                '                    <dl class="row">\n' +
+                '                        <dt class="col-sm-2 mt-2">' + id + '</dt>\n' +
+                '                        <dd class="col-sm-9 mt-2"><span class="user-bar bar" style="width: 0%;"><span class="text-right d-block mr-2 animation-blink">0%</span></span></dd>\n' +
+                '                    </dl>\n' +
+                '                </div>\n' +
+                '            </div>');
+        }
+    </script>
+
     <body>
         <nav>
             <ul>
@@ -82,14 +101,14 @@
                 <th> </th>
                 <th>Won</th>
                 <th>Lost</th>
-                <th>Accept a request</th>
+                <th>Send Request</th>
             </tr>
               <tr>
                 <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
                 <td>Friend A</td>
                 <td style="text-align: center;">1</td>
                 <td style="text-align: center;">3</td>
-                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png" onclick="addBattle('Friend A')" ></button></td>
                 
               </tr>
               <tr>
@@ -97,7 +116,7 @@
                 <td>Friend B</td>
                 <td style="text-align: center;">2</td>
                 <td style="text-align: center;">1</td>
-                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                <td style="text-align: center;"><button type="button" ><img src="checkmark.png" onclick="addBattle('Friend B')" ></button></td>
                 
                 
               </tr>
@@ -107,21 +126,16 @@
                 <td>Friend C</td>
                 <td style="text-align: center;">2</td>
                 <td style="text-align: center;">0</td>
-                <td style="text-align: center;"><button type="button"><img src="checkmark.png" onclick="addBattle()"></button></td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png" onclick="addBattle('Friend C')"></button></td>
                 
                 
               </tr>
-             <script>
-                 function addBattle() {
-                     
-                 }
-             </script>
               <tr>
                 <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
                 <td>Friend D</td>
                 <td style="text-align: center;">1</td>
                 <td style="text-align: center;">3</td>
-                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png" onclick="addBattle('Friend D')" ></button></td>
                 
               </tr>
               
