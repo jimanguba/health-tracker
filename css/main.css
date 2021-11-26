@@ -495,6 +495,7 @@
 }
 
 .front__upwrapper {
+  margin-bottom: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -514,14 +515,14 @@
 }
 
 .profile {
-  margin: 10px;
+  /* margin: 10px;
   height: 300px;
   width: 300px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 0.3s ease-in;
+  transition: 0.3s ease-in; */
 }
 
 
@@ -549,9 +550,11 @@
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  /* background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%); */
   transition: 0.3s ease-in;
 }
+
+
 
 .front__upcard h2 {
   text-align: center;
