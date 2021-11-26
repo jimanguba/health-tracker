@@ -2,58 +2,60 @@
 <p>&nbsp;</p>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="stylesheet" href="css/exercises.css">
 </head>
+
 <body>
     <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="chart.html">Nutrition</a></li>
-          <li><a href="mental-health.html">Mental Health</a></li>
-          <li><a href="exercise-options.html">Exercise Options</a>
-            <ul>
-              <li><a href="exercises.html">Exercises</a></li>
-              <li><a href="exercises-goal-game.html">Goal & Game</a></li>
-              <li><a href="exercise-challenge.html">Challenge</a></li>
-            </ul>
-          </li>
-          <li><a href="profile.html">Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="chart.html">Nutrition</a></li>
+            <li><a href="mental-health.html">Mental Health</a></li>
+            <li><a href="exercise-options.html">Exercise Options</a>
+                <ul>
+                    <li><a href="exercises.html">Exercises</a></li>
+                    <li><a href="exercises-goal-game.html">Goal & Game</a></li>
+                    <li><a href="exercise-challenge.html">Challenge</a></li>
+                </ul>
+            </li>
+            <li><a href="profile.html">Profile</a></li>
         </ul>
     </nav>
 
-      <div class="page-title">Exercises<br></div>
+    <!-- <div class="page-title">Exercises<br></div> -->
 
     <ul class="breadcrumb">
         <li><a href="index.html">Home</a></li>
         <li><a href="exercise-options.html">Exercise Options</a></li>
         <li>Exercises</li>
     </ul>
-    
+
     <h2 style="text-align: center ">Add an Exercise</h2>
     <p style="text-align: center">Search an Exercise, Select desired Exercise</p>
 
 
-<div class='container'>
-    <div class="dropdown">
-        <div class="dropdown-content" id="myDropdown">
-            <input id="myInput" onkeyup="filterFunction()" placeholder="Search.." type="text">
-            <a id = pushUps> Push-ups</a>
-            <a id = sitUps> Sit-ups</a>
-            <a id = pullUps> Pull-ups</a>
-            <a id = squats> Squats</a>
-            <a id = hipThrusts> Hip Thrusts</a>
-            <a id = run>  Run</a>
+    <div class='container'>
+        <div class="dropdown">
+            <div class="dropdown-content" id="myDropdown">
+                <input id="myInput" onkeyup="filterFunction()" placeholder="Search.." type="text">
+                <a id=pushUps> Push-ups</a>
+                <a id=sitUps> Sit-ups</a>
+                <a id=pullUps> Pull-ups</a>
+                <a id=squats> Squats</a>
+                <a id=hipThrusts> Hip Thrusts</a>
+                <a id=run> Run</a>
+            </div>
         </div>
+        <table id="inputExercise">
+            <tr style="border: 1px solid black">
+                <th>Exercise</th>
+                <th>Calories</th>
+            </tr>
+        </table>
     </div>
-    <table id="inputExercise">
-        <tr style="border: 1px solid black">
-            <th>Exercise</th>
-            <th>Calories</th>
-        </tr>
-    </table>
-</div>
     <div class="container">
         <p style="text-align: center;">&nbsp;</p>
         <p style="text-align: center;">&nbsp;</p>
@@ -62,58 +64,57 @@
         <p style="text-align: center;">&nbsp;</p>
         <img style="width: 750px; height: 500px" src="health-tracker-graphs.jpg">
     </div>
-<script>
-    // src="exercises.js"
-    /* When the user clicks on the button,
-    toggle between hiding and showing the dropdown content */
+    <script>
+        // src="exercises.js"
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
 
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    var dropClick = function () {
-        var table = document.getElementById("inputExercise");
-        var row = table.insertRow(1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = this.id;
-        cell2.innerHTML = "100 Cal";
-    }
+        var dropClick = function () {
+            var table = document.getElementById("inputExercise");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = this.id;
+            cell2.innerHTML = "100 Cal";
+        }
 
-    document.getElementById("pushUps").onclick = dropClick;
-    document.getElementById("sitUps").onclick = dropClick;
-    document.getElementById("pullUps").onclick = dropClick;
-    document.getElementById("squats").onclick = dropClick;
-    document.getElementById("hipThrusts").onclick = dropClick;
-    document.getElementById("run").onclick = dropClick;
+        document.getElementById("pushUps").onclick = dropClick;
+        document.getElementById("sitUps").onclick = dropClick;
+        document.getElementById("pullUps").onclick = dropClick;
+        document.getElementById("squats").onclick = dropClick;
+        document.getElementById("hipThrusts").onclick = dropClick;
+        document.getElementById("run").onclick = dropClick;
 
-    function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-            txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                a[i].style.display = "";
-            } else {
-                a[i].style.display = "none";
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
             }
         }
-    }
 
-    var firstInput = document.getElementById("pushUps");
-    var secondInput = document.getElementById("squats");
-    var thirdInput = document.getElementById("run");
-    var fourthInput = document.getElementById("hipThrusts");
-    firstInput.click();
-    secondInput.click();
-    thirdInput.click();
-    fourthInput.click();
-</script>
-<a href="exercise-options.html" class="previous-page"><b>&#8249;</b></a>
+        var firstInput = document.getElementById("pushUps");
+        var secondInput = document.getElementById("squats");
+        var thirdInput = document.getElementById("run");
+        var fourthInput = document.getElementById("hipThrusts");
+        firstInput.click();
+        secondInput.click();
+        thirdInput.click();
+        fourthInput.click();
+    </script>
+    <a href="exercise-options.html" class="previous-page"><b>&#8249;</b></a>
 </body>
+
 </html>
-
-
