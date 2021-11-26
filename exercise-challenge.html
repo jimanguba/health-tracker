@@ -4,6 +4,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="./css/exercisechallenge.css">
+        <link rel ="stylesheet" href="./css/challenge.css" />
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -72,5 +74,58 @@
                 </div>
             </div>
         </section>        
+
+        <div class="friend-list"> 
+            <table align="center" >
+                <tr>
+                <th>Friend </th>
+                <th> </th>
+                <th>Won</th>
+                <th>Lost</th>
+                <th>Accept a request</th>
+            </tr>
+              <tr>
+                <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
+                <td>Friend A</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">3</td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                
+              </tr>
+              <tr>
+                <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
+                <td>Friend B</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                
+                
+              </tr>
+            
+              <tr>
+                <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
+                <td>Friend C</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">0</td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png" onclick="addBattle()"></button></td>
+                
+                
+              </tr>
+             <script>
+                 function addBattle() {
+                     
+                 }
+             </script>
+              <tr>
+                <td style="text-align: center;"><img src="profilePhoto.jpg" height="50" width="50" ></td>
+                <td>Friend D</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">3</td>
+                <td style="text-align: center;"><button type="button"><img src="checkmark.png";></button></td>
+                
+              </tr>
+              
+            </table>
+        </div>
     </body>
 </html>
