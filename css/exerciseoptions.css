@@ -103,6 +103,8 @@ a.page-buttons {
 .previous-page {
     font-size: xxx-large;
     border-radius: 50%;
+    color:black;
+    margin-left: 50px;
 }
 
 .options {
