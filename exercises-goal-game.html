@@ -1,4 +1,6 @@
-<link rel ="stylesheet" href="css/exercises.css" />
+<link rel ="stylesheet" href="css/exercise-goal-game.css" />
+
+<body>
 <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -14,9 +16,15 @@
       <li><a href="profile.html">Profile</a></li>
     </ul>
 </nav>
-<p style="text-align: center;">Excercise Game Page</p>
+
+
 <p style="text-align: center;">&nbsp;</p>
 <p style="text-align: center;">&nbsp;</p>
+
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<div class="page-title">Exercise Game Page<br></div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./inc/chart.util.js"></script>
 <script type="text/javascript"></script>
@@ -31,8 +39,13 @@
 <div>
     <canvas id="myChart"></canvas>
 </div>
-
+</body>
 <script>
+
+    // Note: changes to the plugin code is not reflected to the chart, because the plugin is loaded at chart construction time and editor changes only trigger an chart.update().
+    const image = new Image();
+    image.src = 'https://www.chartjs.org/img/chartjs-logo.svg';
+
     const labels = [
         'January',
         'February',
@@ -49,30 +62,60 @@
     const data = {
         labels: labels,
         datasets: [{
-            label: 'My First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            label: 'Path to Your Goal',
+            data: [65, 55, 80, 81, 60, 55, 40],
             fill: false,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(46, 36, 36)',
             borderDash: [20, 5],
             tension: 0.1,
-            pointStyle: ['rect', 'rect', yourImage, 'rect', 'rect', 'rect', 'rect']
+            pointStyle: ['rect', 'rect', yourImage, 'rect', 'rect', 'rect', 'rect'],
+            backgroundColor: ['rgb(255, 99, 132)'],
+
         }]
+    };
+
+    const plugin = {
+        id: 'custom_canvas_background_color',
+        beforeDraw: (chart) => {
+            const ctx = chart.canvas.getContext('2d');
+            ctx.save();
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.fillStyle = 'lightGreen';
+            ctx.fillRect(0, 0, chart.width, chart.height);
+            ctx.restore();
+        }
     };
 
     const config = {
         type: 'line',
         data: data,
         options: {
-            plugins: {},
+            scales: {
+                y: {
+                    grid: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                plugin
+            },
             elements: {
                 line: {},
                 point: {
                     radius: 15,
                     hoverRadius: 25,
-                }
-            }
+                },
+            },
         }
     };
+
+
 
 
   const myChart = new Chart(
