@@ -1,12 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercises Goal & Game</title>
-</head>
-<body>
-    
-</body>
-</html>
+<p style="text-align: center;">Excercise Game Page</p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./inc/chart.util.js"></script>
+<script type="text/javascript"></script>
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
+
+    var yourImage = new Image()
+    yourImage.src = "https://i.imgur.com/jlJX7mB.png";
+    yourImage.width = 50;
+    yourImage.height = 75;
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            borderDash: [20, 5],
+            tension: 0.1,
+            pointStyle: ['rect', 'rect', yourImage, 'rect', 'rect', 'rect', 'rect']
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            plugins: {},
+            elements: {
+                line: {},
+                point: {
+                    radius: 15,
+                    hoverRadius: 25,
+                }
+            }
+        }
+    };
+
+
+  const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+</script>
