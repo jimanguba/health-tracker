@@ -5,18 +5,26 @@
         <title>profile page</title>
         <link rel ="stylesheet" href="css/profile.css" />
         <script>
-            function myFunction(input){
-                if(isNaN(input))
+            function myFunction(){
+                var str=document.getElementById("num").value;
+                if(str==""){
+                    alert("Input is empty, please enter number id");
+                }
+                else if(isNaN(str)){
+                    alert("Input is not number");
+                }
+                else{
+                
                 alert("Friend application has been sent");
-                else
-                alert("Please enter number ID!");
+                }
+            
             }
             </script>
     </head>
     <body>
-
-
-
+        
+            
+        
         <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
@@ -26,7 +34,7 @@
                 <ul>
                   <li><a href="exercises.html">Exercises</a></li>
                   <li><a href="exercises-goal-game.html">Goal & Game</a></li>
-                  <li><a href="exercise-challenge.html">Current Battles</a></li>
+                  <li><a href="exercise-challenge.html">Challenge</a></li>
                 </ul>
               </li>
               <li><a href="profile.html">Profile</a></li>
@@ -37,30 +45,41 @@
             <font size="80%">Profile</font>
 
         </h1>
+        
+        
+        
+
+        <div><ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Profile</li>
+
+        </ul>
+        </div>
 
         <div class="profile">
 
-        <div class="top-section1" id="topSection1">
-
-        <img src="profilePhoto.jpg">
-        <span class="gender&name"><font size="5"><img src="personGender.png"> User001</font></span>
-        </div>
-
-        <div class="top-section2" id="content">
-            <p class="weight">&#160 Weight: 130 pounds</p>
-            <p class="alreadyLost">&#160 Already lost 10 pounds</p>
-        </div>
-
-        <div class="bottom-section" >
-            <table align="center" border="3" margin="  auto" width="700px" height="100" borderColor="black">
-            <caption>
-                <font size="5">Your Friends</font>
-                <input type="text" value="search for friends using id" >
-
-                  <input type="button" onclick="myFunction()" value="add">
-            </caption>
+            <div class="top-section1" id="topSection1">
+            
+                <img src="profilePhoto.jpg" style="vertical-align:middle;">
+                <span class="gender&name"><font size="5"><img src="personGender.png"> User001</font></span>
+            </div>
+    
+            <div class="top-section2" id="content">
+                <br />
+                <p class="weight">&#160 Weight: 130 pounds</p>
+                <p class="alreadyLost">&#160 Already lost 10 pounds</p>
+            </div>
+            
+            <div class="bottom-section" >
+                <table align="center" border="3" margin="auto" width="700px" height="100" borderColor="black">
+                <caption>
+                    <font size="5">Your Friends</font>
+                    <input type="text" value="add friedns using id (e.g. 001)" id="num">
+                      
+                      <input type="button" onclick="myFunction()" value="add">
+                </caption>
             <tr>
-
+                
                 <td><img src="profilePhoto.jpg" height="50" width="50"  style="vertical-align:middle"></td>
                 <td>
                     <p>Friend A (ID: 002)</p>
@@ -68,7 +87,7 @@
             </tr>
 
             <tr>
-
+                
                 <td><img src="profilePhoto.jpg" height="50" width="50" style="vertical-align:middle"></td>
                 <td>
                     <p>Friend B (ID: 003)</p>
@@ -76,7 +95,7 @@
             </tr>
 
             <tr>
-
+                
                 <td><img src="profilePhoto.jpg" height="50" width="50" style="vertical-align:middle"></td>
                 <td>
                     <p>Friend C (ID: 004)</p>
@@ -84,7 +103,7 @@
             </tr>
 
             <tr>
-
+                
                 <td><img src="profilePhoto.jpg" height="50" width="50" style="vertical-align:middle"></td>
                 <td>
                     <p>Friend D (ID: 005)</p>
@@ -92,7 +111,7 @@
             </tr>
 
             <tr>
-
+                
                 <td><img src="profilePhoto.jpg" height="50" width="50" style="vertical-align:middle"></td>
                 <td>
                     <p>Friend E (ID: 005)</p>
@@ -100,7 +119,7 @@
             </tr>
             </table>
             </div>
-
+            
         </div>
             <a href="javascript:history.go(-1)" class="previous-page"><b>&#8249;</b></a>
 </html>
