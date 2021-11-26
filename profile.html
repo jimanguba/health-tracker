@@ -1,3 +1,5 @@
+<h1 style="text-align: center">Profile</h1>
+<p>&nbsp;</p>
 <html>
     <head>
         <title>profile page</title>
@@ -11,17 +13,34 @@
             }
             </script>
     </head>
-    <body>
+    <body>    
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="chart.html">Nutrition</a></li>
+              <li><a href="mental-health.html">Mental Health</a></li>
+              <li><a href="exercise-options.html">Exercise Options</a>
+                <ul>
+                  <li><a href="exercises.html">Exercises</a></li>
+                  <li><a href="exercises-goal-game.html">Goal & Game</a></li>
+                  <li><a href="exercise-challenge.html">Current Battles</a></li>
+                </ul>
+              </li>
+              <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
         <br />
         <h1 align="center">
             <font size="80%">Profile</font>
 
         </h1>
 
+        <div class="profile">
+
         <div class="top-section1" id="topSection1">
             
-            <img src="profilePhoto.jpg" style="vertical-align:middle;">
-            <span class="gender&name"><font size="5"><img src="personGender.png"> User001</font></span>
+        <img src="profilePhoto.jpg">
+        <span class="gender&name"><font size="5"><img src="personGender.png"> User001</font></span>
         </div>
 
         <div class="top-section2" id="content">
@@ -33,7 +52,7 @@
             <table align="center" border="3" margin="  auto" width="700px" height="100" borderColor="black">
             <caption>
                 <font size="5">Your Friends</font>
-                <input type="text" value="search for friedns using id" >
+                <input type="text" value="search for friends using id" >
                   
                   <input type="button" onclick="myFunction()" value="add">
             </caption>
@@ -78,5 +97,7 @@
             </tr>
             </table>
             </div>
+            
+        </div>
             <a href="javascript:history.go(-1)" class="previous-page"><b>&#8249;</b></a>
 </html>
